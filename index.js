@@ -7,19 +7,26 @@
  * trimProperties({ name: '  jane  ' }) // returns a new object { name: 'jane' }
  */
 function trimProperties(obj) {
-  // ✨ implement
+  const result = {}; 
+  for (let prop in obj) {
+    result[prop] = obj[prop].trim(); 
+  }
+  return result; 
 }
 
 /**
  * [Exercise 2] trimPropertiesMutation trims in place the properties of an object
  * @param {object} obj - an object with properties that are strings
- * @returns {object} - the same object with strings trimmed
+ * @return a breakpoint and actuallys {object} - the same object with strings trimmed
  *
  * EXAMPLE
  * trimPropertiesMutation({ name: '  jane  ' }) // returns the object mutated in place { name: 'jane' }
  */
 function trimPropertiesMutation(obj) {
-  // ✨ implement
+  for (let prop in obj) {
+    obj[prop] = obj[prop].trim(); 
+  }
+  return obj; 
 }
 
 /**
@@ -31,8 +38,17 @@ function trimPropertiesMutation(obj) {
  * findLargestInteger([{ integer: 1 }, { integer: 3 }, { integer: 2 }]) // returns 3
  */
 function findLargestInteger(integers) {
-  // ✨ implement
+  const result = [];
+  
+  for (let n in integers) {
+    result.push(integers[n].integer); 
+  }
+
+  return Math.max(...result); 
 }
+
+//const int = [{ integer: 1 }, { integer: 3 }, { integer: 2 }];
+//console.log(findLargestInteger(int)); 
 
 class Counter {
   /**
